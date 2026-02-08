@@ -165,7 +165,7 @@ export class Haste {
 			logoElement.addEventListener('click', (event) => {
 				event.preventDefault();
 
-				window.history.pushState(null, this.appName, '#about.md');
+				window.history.pushState(null, this.appName, import.meta.env.BASE_URL + '#about.md');
 				return this.loadDocument('about.md');
 			});
 		}
@@ -202,7 +202,7 @@ export class Haste {
 					if (this.doc) {
 						this.doc.key = returnedDocument.key;
 					}
-					window.history.pushState(null, `${this.appName}-${returnedDocument.key}`, file);
+					window.history.pushState(null, `${this.appName}-${returnedDocument.key}`, import.meta.env.BASE_URL + file);
 					this.setButtonsEnabled(false);
 					this.textArea.value = '';
 					this.textArea.style.display = 'none';
