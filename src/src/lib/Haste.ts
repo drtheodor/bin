@@ -133,7 +133,7 @@ export class Haste {
 	}
 
 	public pushRouteState() {
-		window.history.pushState(null, this.appName, '/');
+		window.history.pushState(null, this.appName, import.meta.env.BASE_URL);
 	}
 
 	/**
@@ -165,7 +165,7 @@ export class Haste {
 			logoElement.addEventListener('click', (event) => {
 				event.preventDefault();
 
-				window.history.pushState(null, this.appName, '/about.md');
+				window.history.pushState(null, this.appName, '#about.md');
 				return this.loadDocument('about.md');
 			});
 		}
