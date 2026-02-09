@@ -20,7 +20,7 @@ export class HasteDocument {
 	 */
 	public async load(keyToFetch: string, lang: string): Promise<LoadedHasteDocument> {
 		const { data, key } = await fetch<DocumentData>(
-			api(`/documents/${keyToFetch}`),
+			api(`documents/${keyToFetch}`),
 			{
 				headers: {
 					'Content-Type': FetchMediaContentTypes.JSON,
@@ -73,7 +73,7 @@ export class HasteDocument {
 			this.data = data;
 
 			const result = await fetch<DocumentData>(
-				api('/documents'),
+				api('documents'),
 				{
 					method: 'POST',
 					body: data,
