@@ -11,7 +11,7 @@ jobs:
       - uses: oven-sh/setup-bun@v2
 
       - run: bun install
-      - run: bun run build
+      - run: VITE_API="http://149.102.28.83:25568/" bun run build
       
       - name: Upload static files as artifact
         id: deployment
